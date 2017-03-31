@@ -1,0 +1,38 @@
+
+#1
+
+def cezar(slowo):
+  for klucz in range(31):
+    alfabet="aąbcćdeęfghijklłmnńoóprsśtuwyzźż"
+    regula =str.maketrans(alfabet,alfabet[klucz:]+alfabet[:klucz])
+    print (slowo.translate(regula)) 
+    
+    #słowo to: różniczkowanie
+    
+
+#2
+
+def szyfruj_liste(lista):
+  for slowo in lista:
+    alfabet="AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ"
+    klucz=len(slowo)
+    regula =str.maketrans(alfabet,alfabet[klucz:]+alfabet[:klucz])
+    print (slowo.translate(regula)) 
+    #print(klucz)
+    
+#3
+  
+
+def szyfruj_napis(napis,klucz):
+  am="aąbcćdeęfghijklłmnńoóprsśtuwyzźż"
+  ad='AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ'
+  regula1= str.maketrans(am,am[klucz:]+am[:klucz])
+  regula2= str.maketrans(ad,ad[klucz:]+ad[:klucz])
+  for litera in napis:
+    if litera in am:
+      print(litera.translate(regula1),end="")
+    elif litera in ad:
+      print(litera.translate(regula2),end="")
+    else:
+      print(litera, end="")
+      
